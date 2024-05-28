@@ -1,0 +1,11 @@
+{
+    "witaj_jestem": "Witaj, jestem",
+    "welcome_to_react": "Witaj PL w React",
+    "full_stack_developer_w_technologii_javascript": "Full-Stack developer w technologii JavaScript",
+    "about": "O mnie",
+    "work": "Doświadczenie",
+    "contact": "Kontakt",
+    "about_opis": "O mnie. Jestem programistą {{number_of_days}} ",
+
+    "": ""
+}

@@ -1,0 +1,214 @@
+.offer {
+    &__background {
+      width: 100%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      bottom: right;
+    }
+  
+    &__arrow {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        z-index: 10;
+        top: -20px;
+      }
+  
+    &__heading {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 30px 15px 30px 15px;
+
+        &--nasza {
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+
+        &--romb {
+            margin: -4px 0;
+            height: 8px;
+            width: 8px;
+            background-color: #C19D56;
+            transform: rotate(45deg);
+        }
+
+        // &--line {        }
+
+        &--oferta {
+            font-size: 42px;
+            line-height: 34px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            margin-top: 30px;
+            
+        }
+       
+        &--description {
+            max-width: 750px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+    }
+  
+
+    &__tiles {
+        // position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        // max-width: 1200px;
+        align-content: flex-start;
+        width: 100%;
+        margin: 0 -15px;
+    }
+  
+    &__tile {
+        position: relative;
+        visibility: visible;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 295px;
+        max-width: 680px;
+        flex-grow: 1;
+        flex-basis: 0;
+        background-color: green;
+        margin: 15px 15px;
+        background-size: cover;
+        background-position: center;
+        transition: background-size 0.5s ease;
+        overflow: hidden;
+        // background: rgba(0, 0, 0, 0.5); // Półprzezroczyste tło dla widoczności tekstu
+        box-sizing: border-box;
+
+
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); // Przyciemnienie
+            z-index: 1; // Upewnij się, że jest poniżej treści .offer__item
+            transition: background-color 0.5s ease;
+        }
+
+        &:hover {
+            .offer__image {
+                transform: scale(1.05); // Powiększamy obrazek o 20%
+                transition: transform 1s ease; // Dodajemy animację przejścia
+            }
+
+            .offer__item--line {
+                width: 60%;
+                // transition: transform 1s ease;
+            }
+
+            &::before {
+                background: rgba(0, 0, 0, 0.4); // Lżejsze przyciemnienie podczas hover
+            }
+        }
+    }
+
+
+    &__image {
+        width: 100%; // Szerokość zawsze równa 100% kontenera.
+        height: auto; // Wysokość automatycznie dostosowuje się do szerokości, zachowując proporcje.
+        display: block;
+        object-fit: cover; // Obraz wypełnia cały kontener, zachowując proporcje.
+        min-height: 100%;
+
+        transition: transform 1s ease;
+    }
+
+    &__item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff; // Biały tekst na ciemnym tle
+        margin: 15px 15px;
+        border: 1px solid #fff;
+        z-index: 2;
+
+        &--catering {
+            color: #C19D56;
+            font-family: 'Great Vibes', cursive;
+            font-size: 40px;
+            margin: 10px;
+        }
+
+        &--romb {
+            margin: -4px 0;
+            height: 8px;
+            width: 8px;
+            background-color: #C19D56;
+            transform: rotate(45deg);
+        }
+
+        &--title {
+            font-size: 42px;
+            line-height: 34px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 20px;
+        }
+
+      }
+
+      &__icon {
+        height: 80px;
+      }
+
+      &__item--line {
+        content: '';
+        width: 20%; // Początkowa szerokość
+        height: 1px;
+        background: #c19d56;
+        transition: width 0.5s ease; // Animacja szerokości
+    }
+
+
+
+    &__button {
+        border: 3px solid #FFF;
+        color: #fff;
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.5s ease;
+        padding: 7px 30px;
+        margin: 10px;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+
+    
+  }

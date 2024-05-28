@@ -1,0 +1,218 @@
+@import '../variables';
+
+.sushi2-contener {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background:  $background-main-color;
+    width: 100%;
+    max-width: 1240px;
+    margin: 150px 0 0 0;
+
+    
+    &__pozycja_menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-content: center;
+        // background: #F00;
+        width: 100%;
+        height: 100px;
+        font-size: 28px;
+        margin: 20px 0;
+        // dodaj cienie
+        
+        background-size: cover;
+        // background-size: 80%;
+        background-position: center;
+        background-repeat: repeat;
+        // background-attachment: fixed;
+        
+        &--napis {
+            text-shadow:  1px  1px 1px  #000,
+                          1px -1px 1px  #000,
+                         -1px  1px 1px  #000,
+                         -1px  -1px 1px  #000;
+        }
+    }
+
+    &__zamow-mapa{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        &__obj {
+            // height: 260px;
+            width: 280px;
+            margin: 20px 0;
+        }
+
+    }
+
+
+
+}
+
+
+.sushi2-contener__content {
+    // height: 260px;
+    width: 100%;
+
+    // max-height: 0;
+    // overflow: hidden;
+    // transition: max-height 1s ease-in-out;
+    // background: #000;
+}
+
+.sushi2-contener__content.expanded {
+    // max-height: 500px; // Ustaw maksymalną wysokość rozwiniętej sekcji
+    height: auto; // Ustaw maksymalną wysokość rozwiniętej sekcji
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// .sushi-view {
+
+//     &__menu--header{
+//         height: 70px;
+//         display: flex;
+//         align-items: center;
+//         margin: 0 20px;
+
+//     }
+
+//     &__menu1 {
+//         margin: 10px 0px;
+//         font-size: 18px;
+//     }
+
+//     &__menu2 {
+//         margin: 10px 0px ;
+//         font-size: 18px;
+//         list-style-type: circle;
+//     }
+   
+//     &__ul {    
+//         padding-left: 30px;
+//     }
+
+    
+//     &__menu_boczne--zamow {
+//         background-size: 100% 100%;
+//         background-repeat: no-repeat;
+//     }
+
+
+// }
+
+
+.sushi2_cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    // justify-content: space-between;
+    // align-items: stretch;
+    // margin: 0 -10px;
+}
+
+.sushi2_card {
+    min-height: 400px;
+    max-width: calc(25% - 20px);
+    flex: 1 1 calc(25% - 20px); // Domyślnie trzy elementy na szerokość, uwzględniając margines
+    margin: 10px;
+    box-sizing: border-box;
+
+    &--title {
+        font-size: 1.3em;
+        color: black;
+        padding: 14px 0 0 0;
+        min-height: 120px;
+    }
+
+    &--price {
+        color: #c19d56;
+        font-weight: 700;
+        font-size: 1.786em;
+        text-align: center;
+        font-family: 'Great Vibes';
+    }
+
+    &--romb {
+        margin: -5px 0;
+        height: 8px;
+        width: 8px;
+        background-color: #C19D56;
+        transform: rotate(45deg);
+    }
+
+    &--line {
+        content: '';
+        width: 20%; // Początkowa szerokość
+        height: 2px;
+        background: #c19d56;
+        transition: width 0.5s ease; // Animacja szerokości
+
+    }
+
+    &--button {
+        width: 100%;
+        color: black;
+        border: 2px solid black;
+        font-size: 14px;
+        font-weight: bold;
+    }
+}
+
+// Trzy elementy na szerokość dla mniejszych ekranów
+@media screen and (max-width: 1100px) { // Ajustuj punkt przerwania według potrzeb
+    .sushi2_card {
+        flex-basis: calc(33.3% - 20px); // Dwukolumnowy układ
+        width: 20%;
+        max-width: calc(33.3% - 20px);
+    }
+}
+
+// Dwa elementy na szerokość dla mniejszych ekranów
+@media screen and (max-width: 900px) { // Ajustuj punkt przerwania według potrzeb
+    .sushi2_card {
+        flex-basis: calc(50% - 20px); // Dwukolumnowy układ
+        width: 20%;
+        max-width: calc(50% - 20px);
+    }
+}
+
+// Jeden element na szerokość dla bardzo wąskich ekranów
+@media screen and (max-width: 600px) { // Ajustuj punkt przerwania według potrzeb
+    .sushi2_card {
+        flex-basis: 100%; // Jednokolumnowy układ
+        max-width: 360px;
+        width: 100%;
+        margin: 14px auto;
+    }
+    
+    .sushi2_cards {
+        margin: 0px;
+    }
+}
+
+.sushi-view__ilosc-wynikow {
+    display: block;
+
+}
+
+@media screen and (max-width: 1240px) {
+    .sushi-view__ilosc-wynikow {
+        display: none;
+    }
+}
